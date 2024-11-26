@@ -1,0 +1,47 @@
+Question 1: From the job_history table, find the rows where the start_date and end_date have the same day of month 
+
+SELECT *
+FROM job_history
+WHERE DAY(start_date) = DAY(end_date);
+
+
+Question 2: From the employees table, write a query to display first name and last name and email only the first letter in
+uppercase of employees in the 90th department
+
+SELECT 
+    CONCAT(UPPER(LEFT(first_name, 1)), LOWER(SUBSTRING(first_name, 2))) AS first_name,
+    CONCAT(UPPER(LEFT(last_name, 1)), LOWER(SUBSTRING(last_name, 2))) AS last_name,
+    CONCAT(UPPER(LEFT(email, 1)), LOWER(SUBSTRING(email, 2))) AS email
+FROM employees
+WHERE department_id = 90;
+
+Question 3: Write a query to find employees first name , last name, job title and department name whose salary is greater than 7500
+
+
+SELECT 
+    e.first_name,
+    e.last_name,
+    e.job_title,
+    d.department_name
+FROM employees e
+JOIN departments d ON e.department_id = d.department_id
+WHERE e.salary > 7500;
+
+
+Question 4: From the departments table, write a query to find departments whose manager id is known (has a value)
+SELECT *
+FROM departments
+WHERE manager_id IS NOT NULL;
+
+
+Question 5:From the employees table, write a query to find  first_name,last_name and email for all employees whose department id is odd number
+SELECT first_name, last_name, email
+FROM employees
+WHERE department_id % 2 = 1;
+
+
+Question 6: From the employees table,write a query to find unique job titles of employees whose salary more than 
+7000 or whose last_name containing E
+SELECT DISTINCT job_title
+FROM employees
+WHERE salary > 7000 OR last_name LIKE '%E%';
