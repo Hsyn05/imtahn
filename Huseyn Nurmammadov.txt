@@ -1,0 +1,18 @@
+Question 1: From the job_history table, find the rows where the start_date and end_date have the same day of month 
+
+
+
+
+Question 2: From the employees table, write a query to display first name and last name and email only the first letter in
+uppercase of employees in the 90th department
+
+
+Question 3: Write a query to find employees first name , last name, job title and department name whose salary is greater than 7500
+
+
+Question 4: From the departments table, write a query to find departments whose manager id is known (has a value)
+
+Question 5:From the employees table, write a query to find  first_name,last_name and email for all employees whose department id is odd number
+
+Question 6: From the employees table,write a query to find unique job titles of employees whose salary more than 
+7000 or whose last_name containing E
